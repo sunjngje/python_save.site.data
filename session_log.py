@@ -89,7 +89,7 @@ def login():
     # 再次使用session以get去访问知乎首页，一定要设置verify = False，否则会访问失败
 
 
-# url = "http://kak168.com"
+# url = "xxxx"
 # 进行登录，将星号替换成你的知乎登录邮箱和密码即可
 
 # strpattern = r'(?<=<table class="tCenter tab w100 f14 ml15" cellspacing="0">).+?(?=</table>)'
