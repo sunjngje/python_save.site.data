@@ -7,10 +7,10 @@ def inster(datak):
     # 连接数据库
     connect = pymysql.Connect(
         host='localhost',
-        port=3306,
-        user='root',
-        passwd='root',
-        db='kdata',
+        port=xxx,
+        user='xxx',
+        passwd='xxx',
+        db='xxx',
         charset='utf8'
     )
     # 获取游标
@@ -45,7 +45,7 @@ def getXSRF(url):
 # 登录的主方法
 def login():
     # 获取验证码
-    codeurl = 'http://kak168.com/admin.php/Public/verify/'
+    codeurl = 'xxxxxxxx'
     valcode = requests.get(codeurl)
     f = open('valcode.png', 'wb')
     # 将response的二进制内容写入到文件中
@@ -68,14 +68,14 @@ def login():
         'Accept-Encoding': 'gzip, deflate, sdch',
         'Accept-Language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2',
         'Connection': 'keep-alive',
-        'Host': 'www.kak168.com',
+        'Host': 'xxxxxxxxx',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36',
-        'Referer': 'http://www.kak168.com/',
+        'Referer': 'http://xxxxxx/',
     }
     # 使用seesion登录，这样的好处是可以在接下来的访问中可以保留登录信息
     session = requests.session()
     # 登录的URL
-    baseurl = "http://kak168.com/admin.php/Index/do_login"
+    baseurl = "xxxxxxxxxx"
     # requests 的session登录，以post方式，参数分别为url、headers、data
     content = session.post(baseurl, headers=headers_base, cookies=requests.utils.dict_from_cookiejar(valcode.cookies),data=login_data)
     # 成功登录后输出为 {"r":0,"msg": "\u767b\u9646\u6210\u529f"}
@@ -104,7 +104,7 @@ def login():
 def cont(headers=None, cookies=None, data=None,):
     session = requests.session()
     for i in range(1, 301):
-        s = session.get("http://kak168.com/admin.php/Member/allfws/role/0/p/" + str(i), headers=headers, cookies=cookies, data=data)
+        s = session.get("xxxxxxxxx" + str(i), headers=headers, cookies=cookies, data=data)
         # 把爬下来的知乎首页写到文本中
         # f = open('test3.txt', 'w')
         # f.write(s.text.encode('utf-8'))
